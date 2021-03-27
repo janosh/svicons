@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(0deg, #000077, #00794a);
+  min-height: 100vh;
+  padding: 2vw;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  color: white;
+  text-align: center;
+}
+a {
+  color: #0075ff;
+  text-decoration: none;
+}
+a:hover {
+  color: orange;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 3pt 1ex;
+  border-radius: 1ex;
+  transition: 0.2s;
+}

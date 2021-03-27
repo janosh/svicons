@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# production build
+.svelte
+build
+functions
+
+# deploy config
+.netlify
+
+# icons
+src/icons
