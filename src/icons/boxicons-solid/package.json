@@ -1,6 +1,6 @@
 {
-  "name": "@svicon/boxicons-solid",
-  "version": "0.1.0",
+  "name": "@svicons/boxicons-solid",
+  "version": "0.1.1",
   "license": "MIT",
   "module": "./index.js",
   "devDependencies": {
@@ -14,6 +14,6 @@
   ],
   "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
   "description": "Boxicons Solid icons available as Svelte components",
-  "homepage": "https://github.com/janosh/svicon#readme",
-  "repository": "git://github.com/janosh/svicon"
+  "homepage": "https://github.com/janosh/svicons#readme",
+  "repository": "git://github.com/janosh/svicons"
 }
