@@ -34,7 +34,7 @@
   const toTitleCase = (str) => str.split(`-`).map(titleCase).join(` `)
 </script>
 
-<img src="svicon.svg" alt="Svicon" style="height: 6em; margin: 2em 1em 3em;" />
+<img src="svicons.svg" alt="Svicons" style="height: 6em; margin: 2em 1em 3em;" />
 
 <p>
   <span>{Object.keys(packLengths).length}</span> Icon Packs totaling

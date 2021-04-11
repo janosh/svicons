@@ -1,12 +1,14 @@
 {
-  "name": "@svicon/feather",
-  "version": "0.1.0",
+  "name": "@svicons/feather",
+  "version": "0.1.2",
   "license": "MIT",
   "module": "./index.js",
+  "type": "module",
   "devDependencies": {
     "@svg-icons/feather": "latest"
   },
   "keywords": [
+    "svicons",
     "svg",
     "icons",
     "svelte",
@@ -14,6 +16,7 @@
   ],
   "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
   "description": "Feather icons available as Svelte components",
-  "homepage": "https://github.com/janosh/svicon#readme",
-  "repository": "git://github.com/janosh/svicon"
+  "homepage": "https://github.com/janosh/svicons#readme",
+  "repository": "git://github.com/janosh/svicons",
+  "private": false
 }

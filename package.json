@@ -1,9 +1,9 @@
 {
-  "name": "svicon",
+  "name": "svicons",
   "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
   "description": "Popular SVG Icon Packs as Svelte components",
-  "repository": "https://github.com/janosh/svicon",
-  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "https://github.com/janosh/svicons",
+  "homepage": "https://github.com/janosh/svicons#readme",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -56,8 +56,7 @@
   "scripts": {
     "build": "svelte-kit build",
     "dev": "svelte-kit dev",
-    "serve": "svelte-kit build && svelte-kit start",
     "start": "svelte-kit start",
-    "symlinkAssets": "ln -sf $PWD/../assets $PWD/static"
+    "serve": "svelte-kit build && svelte-kit start"
   }
 }

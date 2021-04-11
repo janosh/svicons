@@ -1,12 +1,14 @@
 {
-  "name": "@svicon/bootstrap",
+  "name": "@svicons/bootstrap",
   "version": "0.1.0",
   "license": "MIT",
   "module": "./index.js",
+  "type": "module",
   "devDependencies": {
     "@svg-icons/bootstrap": "latest"
   },
   "keywords": [
+    "svicons",
     "svg",
     "icons",
     "svelte",
@@ -14,6 +16,6 @@
   ],
   "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
   "description": "Bootstrap icons available as Svelte components",
-  "homepage": "https://github.com/janosh/svicon#readme",
-  "repository": "git://github.com/janosh/svicon"
+  "homepage": "https://github.com/janosh/svicons#readme",
+  "repository": "git://github.com/janosh/svicons"
 }
