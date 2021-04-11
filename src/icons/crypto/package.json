@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/crypto",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/crypto": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "crypto"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Crypto icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/boxicons-logos",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/boxicons-logos": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "boxicons-logos"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Boxicons Logos icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

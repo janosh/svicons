@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/material-outlined",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/material-outlined": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "material-outlined"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Material Outlined icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

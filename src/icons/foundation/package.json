@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/foundation",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/foundation": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "foundation"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Foundation icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

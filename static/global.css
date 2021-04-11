@@ -14,10 +14,11 @@ a:hover {
   color: orange;
 }
 button {
-  background: transparent;
   border: none;
   outline: none;
   padding: 3pt 1ex;
   border-radius: 1ex;
   transition: 0.2s;
+  color: white;
+  cursor: pointer;
 }

@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/material-rounded",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/material-rounded": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "material-rounded"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Material Rounded icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

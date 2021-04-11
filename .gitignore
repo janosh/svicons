@@ -1,5 +1,6 @@
 # dependencies
 node_modules
+yarn-error.log
 
 # production build
 .svelte
@@ -8,6 +9,3 @@ functions
 
 # deploy config
 .netlify
-
-# icons
-src/icons

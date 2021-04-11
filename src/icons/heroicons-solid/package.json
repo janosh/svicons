@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/heroicons-solid",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/heroicons-solid": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "heroicons-solid"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Heroicons Solid icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}

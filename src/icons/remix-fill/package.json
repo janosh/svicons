@@ -1,0 +1,19 @@
+{
+  "name": "@svicon/remix-fill",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "./index.js",
+  "devDependencies": {
+    "@svg-icons/remix-fill": "latest"
+  },
+  "keywords": [
+    "svg",
+    "icons",
+    "svelte",
+    "remix-fill"
+  ],
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "description": "Remix Fill icons available as Svelte components",
+  "homepage": "https://github.com/janosh/svicon#readme",
+  "repository": "git://github.com/janosh/svicon"
+}
