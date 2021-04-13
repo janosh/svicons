@@ -4,7 +4,7 @@
 import fs from 'fs'
 import path from 'path'
 const dirs = fs
-  .readdirSync(`src/icons`, { withFileTypes: true })
+  .readdirSync(`packages`, { withFileTypes: true })
   .filter((dirent) => dirent.isDirectory())
   .map((dirent) => dirent.name)
 
@@ -17,27 +17,23 @@ const removeExt = (str) => path.basename(str, `.svelte`)
 
 for (const dir of dirs) {
   console.log(`Processing ${dir}...`)
-  const icons = fs
-    .readdirSync(`src/icons/${dir}`)
+  const iconNames = fs
+    .readdirSync(`packages/${dir}`)
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard index.js files starting with digits
     .map(removeExt)
 
-  const imports = icons
+  const imports = iconNames
     .map(
       (icon) =>
         `export { default as ${pascalCase(icon)} } from './${icon}.svelte'`
     )
     .join(`\n`)
 
-  // const defaultExport = `\n\nexport default [${icons
-  //   .map((icon) => `[${toPascalCase(icon)}, '${icon}']`)
-  //   .join(`, `)}]\n`
-
-  fs.writeFileSync(`src/icons/${dir}/index.js`, imports)
+  fs.writeFileSync(`packages/${dir}/index.js`, imports)
 
   const pkg = {
     name: `@svicons/${dir}`,
-    version: `0.1.0`,
+    version: `0.1.3`,
     license: `MIT`,
     module: `./index.js`,
     type: `module`,
@@ -53,11 +49,20 @@ for (const dir of dirs) {
       access: `public`,
     },
   }
-  fs.writeFileSync(
-    `src/icons/${dir}/package.json`,
-    JSON.stringify(pkg, null, 2)
-  )
+  fs.writeFileSync(`packages/${dir}/package.json`, JSON.stringify(pkg, null, 2))
 
-  fs.writeFileSync(`src/icons/${dir}/.gitignore`, `*.svelte\n*.js\n`)
-  fs.writeFileSync(`src/icons/${dir}/.npmignore`, ``)
+  fs.writeFileSync(`packages/${dir}/.gitignore`, `*.svelte\n*.js\n`)
+  fs.writeFileSync(`packages/${dir}/.npmignore`, ``)
+
+  let readme = fs.readFileSync(`scripts/readme-template.md`, `utf8`)
+  for (const [slot, newStr] of [
+    [`{packName}`, dir],
+    [`{titleCasedPackName}`, titleCase(dir)],
+    [`{fileName}`, iconNames[0]],
+    [`{componentName}`, pascalCase(iconNames[0])],
+    [/<!-- .+ -->\n/g, ``], // remove HTML comments
+  ]) {
+    readme = readme.replaceAll(slot, newStr)
+  }
+  fs.writeFileSync(`packages/${dir}/readme.md`, readme)
 }
