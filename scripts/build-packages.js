@@ -16,7 +16,8 @@ const pascalCase = (str) => str.split(`-`).map(upperFirst).join(``)
 const removeExt = (str) => path.basename(str, `.svelte`)
 
 for (const dir of dirs) {
-  console.log(`Processing ${dir}...`)
+  console.log(`Building ${dir}...`)
+
   const iconNames = fs
     .readdirSync(`packages/${dir}`)
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard index.js files starting with digits
@@ -66,3 +67,5 @@ for (const dir of dirs) {
   }
   fs.writeFileSync(`packages/${dir}/readme.md`, readme)
 }
+
+console.log(`Finished building all ${dirs.length} packages!`)

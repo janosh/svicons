@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="site/static/svicons.svg" alt="Svicons" height=150>
+  <img src="site/static/svicons.svg" alt="Svicons" height=125>
 </p>
 
 <h2 align="center">Popular SVG icon packs as dependency-free Svelte components</h2>
@@ -51,7 +51,7 @@ Another big thanks to each of these icon packs for providing their icons for pub
 - [Font Awesome](https://fontawesome.com): [CC BY 4.0 License](https://github.com/FortAwesome/Font-Awesome/blob)
 - [Foundation](https://zurb.com/playground/foundation-icon-fonts-3): [MIT License](https://github.com/thecreation/standard-icons/blob/master)
 - [Heroicons](https://github.com/refactoringui/heroicons): [MIT License](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE)
-- [Icomoon](https://icomoon.io): [GPL](http://www.gnu.org/licenses/gpl.html) / [CC BY 4.0 License](http:/
+- [Icomoon](https://icomoon.io): [GPL](http://www.gnu.org/licenses/gpl.html) / [CC BY 4.0 License](http://creativecommons.org/licenses/by/4.0)
 - [Ionicons](https://ionicons.com): [MIT License](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
 - [Material Design](https://material.io/icons): [Apache License Version 2.0](https://github.com/google)
 - [Octicons](https://octicons.github.com): [MIT License](https://github.com/primer/octicons/blob/master/LICENSE)

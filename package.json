@@ -11,7 +11,14 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "release": "node scripts/build-packages.js && yarn changeset publish"
+  },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
     "@svg-icons/bootstrap": "^1.45.0",
     "@svg-icons/boxicons-logos": "^1.39.1",
     "@svg-icons/boxicons-regular": "^1.39.1",
@@ -47,7 +54,6 @@
     "@svg-icons/simple-icons": "^1.47.0",
     "@svg-icons/typicons": "^1.39.1",
     "@svg-icons/zondicons": "^1.39.1",
-    "eslint": "^7.22.0",
-    "prettier": "^2.2.1"
+    "@changesets/cli": "^2.16.0"
   }
 }

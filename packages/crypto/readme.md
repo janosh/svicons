@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/janosh/svicons/main/site/static/svicons.svg" alt="Svicons" height=150>
+  <img src="https://raw.githubusercontent.com/janosh/svicons/main/site/static/svicons.svg" alt="Svicons" height=125>
 </p>
 
-<h3 align="center">
+<h2 align="center">
 
   [Crypto][crypto] icon pack as dependency-free Svelte components
-</h3>
+</h2>
 
 > Big thanks to [@jacobwgillespie](https://github.com/jacobwgillespie) and his project [`svg-icons`](https://github.com/svg-icons/svg-icons) for providing pre-assembled and pre-cleaned SVG icons!
 
