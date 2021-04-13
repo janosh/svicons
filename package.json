@@ -7,9 +7,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "@sveltejs/adapter-netlify": "^1.0.0-next.4",
-    "@sveltejs/kit": "^1.0.0-next.71",
     "@svg-icons/bootstrap": "^1.45.0",
     "@svg-icons/boxicons-logos": "^1.39.1",
     "@svg-icons/boxicons-regular": "^1.39.1",
@@ -46,17 +47,6 @@
     "@svg-icons/typicons": "^1.39.1",
     "@svg-icons/zondicons": "^1.39.1",
     "eslint": "^7.22.0",
-    "eslint-plugin-svelte3": "^3.1.2",
-    "prettier": "^2.2.1",
-    "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.35.0",
-    "vite": "^2.1.5"
-  },
-  "module": "src/icons",
-  "scripts": {
-    "build": "svelte-kit build",
-    "dev": "svelte-kit dev",
-    "start": "svelte-kit start",
-    "serve": "svelte-kit build && svelte-kit start"
+    "prettier": "^2.2.1"
   }
 }

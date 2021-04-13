@@ -16,3 +16,8 @@
 | material-sharp          | material-twotone | octicons          | open-iconic       | remix-editor           |
 | remix-fill              | remix-line       | simple-icons      | typicons          | zondicons              |
 
+```sh
+for dir in src/icons/*; do
+  yarn publish --new-version 0.1.2 --access public $dir
+done
+```

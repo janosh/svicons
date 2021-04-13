@@ -1,11 +1,3 @@
 # dependencies
 node_modules
 yarn-error.log
-
-# production build
-.svelte
-build
-functions
-
-# deploy config
-.netlify

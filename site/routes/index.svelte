@@ -1,20 +1,12 @@
 <script context="module">
-  // import svgs from '../svgs.json'
-
-  export async function load() {
-    const { bootstrap } = {}
-
-    return { props: { svgData: { bootstrap } } }
-  }
+  export const ssr = false
 </script>
 
 <script>
-  import IntersectionObserver from '../components/IntersectionObserver.svelte'
+  import VirtualList from '@sveltejs/svelte-virtual-list'
   // import CopyButton from '../components/CopyButton.svelte'
-  // import iconKeys from '../iconKeys.json'
+  import iconKeys from '../iconKeys.json'
   import packLengths from '../packLengths.json'
-
-  export let svgData
 
   let nVisibleIcons = 200
   let nVisiblePacks = 2
@@ -53,7 +45,24 @@
     </li>
   {/each}
 </ul>
-{#each Object.entries(svgData)
+
+<ul class="grid">
+  <VirtualList items={iconKeys.bootstrap} let:key>
+    <li>
+      <small>{toTitleCase(key)}</small>
+    </li>
+  </VirtualList>
+  <!-- {#each iconKeys.bootstrap as key}
+    {#await import(`../icons/bootstrap/${key}.svelte`).then((module) => module.default) then Component}
+      <li>
+        <small>{toTitleCase(key)}</small>
+        <Component />
+      </li>
+    {/await}
+  {/each} -->
+</ul>
+
+<!-- {#each Object.entries(svgData)
   .filter((pack) => activePacks.length === 0 || activePacks.includes(pack[0]))
   .slice(0, nVisiblePacks) as [name, pack]}
   <div>
@@ -65,21 +74,20 @@
         <li>
           <small>{toTitleCase(key)}</small>
           <svg viewBox="0 0 16 16" fill="currentColor">{@html svg}</svg>
-          <!-- <CopyButton>
-        <code
-        ><span class="builtin">import</span>
-        <span class="symbol">{key}</span>
-        <span class="builtin">from</span>
-        <span class="str">'svicons/octicons/{key}.svelte'</span></code>
-      </CopyButton> -->
+          <CopyButton>
+            <code
+              ><span class="builtin">import</span>
+              <span class="symbol">{key}</span>
+              <span class="builtin">from</span>
+              <span class="str">'svicons/octicons/{key}.svelte'</span></code>
+          </CopyButton>
         </li>
       {/each}
     </ul>
     <IntersectionObserver on:intersect={onIntersectIconEnd} top={400} />
   </div>
 {/each}
-<IntersectionObserver on:intersect={onIntersectPackEnd} top={600} />
-
+<IntersectionObserver on:intersect={onIntersectPackEnd} top={600} /> -->
 <style>
   h2 {
     margin: 3em 0 1em 0;
@@ -107,6 +115,12 @@
     margin: 1em auto 2em;
     padding: 0 1ex;
     font-size: calc(0.85em + 0.1vw);
+  }
+  ul.tags button {
+    transition: 0.3s;
+  }
+  ul.tags button:hover {
+    transform: translateY(-1pt);
   }
   ul.grid {
     display: grid;

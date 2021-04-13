@@ -49,6 +49,9 @@ for (const dir of dirs) {
     description: `${titleCase(dir)} icons available as Svelte components`,
     homepage: `https://github.com/janosh/svicons#readme`,
     repository: `git://github.com/janosh/svicons`,
+    publishConfig: {
+      access: `public`,
+    },
   }
   fs.writeFileSync(
     `src/icons/${dir}/package.json`,

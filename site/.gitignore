@@ -1,0 +1,7 @@
+# production build
+.svelte
+build
+functions
+
+# deploy config
+.netlify
