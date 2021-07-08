@@ -30,15 +30,15 @@ Then in a Svelte file, import and use as
 
 ## All Available Icon Packs
 
-|                             |                      |                       |                       |                            |
-| --------------------------- | -------------------- | --------------------- | --------------------- | -------------------------- |
-| [bootstrap][]               | [boxicons-logos][]   | [boxicons-regular][]  | [boxicons-solid][]    | [crypto][]                 |
-| [entypo][]                  | [entypo-social][]    | [evaicons-outline][]  | [evaicons-solid][]    | [evil][]                   |
-| [fa-brands][]               | [fa-regular][]       | [fa-solid][]          | [feather][]           | [fluentui-system-filled][] |
-| [fluentui-system-regular][] | [foundation][]       | [heroicons-outline][] | [heroicons-solid][]   | [icomoon][]                |
-| [ionicons-outline][]        | [ionicons-sharp][]   | [ionicons-solid][]    | [material-outlined][] | [material-rounded][]       |
-| [material-sharp][]          | [material-twotone][] | [octicons][]          | [open-iconic][]       | [remix-editor][]           |
-| [remix-fill][]              | [remix-line][]       | [simple-icons][]      | [typicons][]          | [zondicons][]              |
+|                           |                    |                     |                     |                          |
+| ------------------------- | ------------------ | ------------------- | ------------------- | ------------------------ |
+| [bootstrap]               | [boxicons-logos]   | [boxicons-regular]  | [boxicons-solid]    | [crypto]                 |
+| [entypo]                  | [entypo-social]    | [evaicons-outline]  | [evaicons-solid]    | [evil]                   |
+| [fa-brands]               | [fa-regular]       | [fa-solid]          | [feather]           | [fluentui-system-filled] |
+| [fluentui-system-regular] | [foundation]       | [heroicons-outline] | [heroicons-solid]   | [icomoon]                |
+| [ionicons-outline]        | [ionicons-sharp]   | [ionicons-solid]    | [material-outlined] | [material-rounded]       |
+| [material-sharp]          | [material-twotone] | [octicons]          | [open-iconic]       | [remix-editor]           |
+| [remix-fill]              | [remix-line]       | [simple-icons]      | [typicons]          | [zondicons]              |
 
 [bootstrap]: https://npmjs.com/package/@svicons/bootstrap
 [boxicons-logos]: https://npmjs.com/package/@svicons/boxicons-logos

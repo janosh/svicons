@@ -8,17 +8,17 @@
 
 ## Usage
 
-Install any of the below icon packs with
+Install any of the icon packs in the table below with
 
 ```sh
-yarn add -D @svicons/<pack-name>
+yarn add -D @svicons/<pack-name>  # e.g. yarn add -D @svicons/fa-solid @svicons/material-sharp
 ```
 
 Then in a Svelte file, import and use as
 
 ```svelte
 <script>
-  import Alarm from '@svicons/bootstrap/alarm.svelte
+  import Alarm from '@svicons/bootstrap/alarm.svelte'
 </script>
 
 <Alarm width="3em" color="green" />
@@ -26,15 +26,15 @@ Then in a Svelte file, import and use as
 
 ## Available Icon Packs
 
-|                             |                      |                       |                       |                            |
-| --------------------------- | -------------------- | --------------------- | --------------------- | -------------------------- |
-| [bootstrap][]               | [boxicons-logos][]   | [boxicons-regular][]  | [boxicons-solid][]    | [crypto][]                 |
-| [entypo][]                  | [entypo-social][]    | [evaicons-outline][]  | [evaicons-solid][]    | [evil][]                   |
-| [fa-brands][]               | [fa-regular][]       | [fa-solid][]          | [feather][]           | [fluentui-system-filled][] |
-| [fluentui-system-regular][] | [foundation][]       | [heroicons-outline][] | [heroicons-solid][]   | [icomoon][]                |
-| [ionicons-outline][]        | [ionicons-sharp][]   | [ionicons-solid][]    | [material-outlined][] | [material-rounded][]       |
-| [material-sharp][]          | [material-twotone][] | [octicons][]          | [open-iconic][]       | [remix-editor][]           |
-| [remix-fill][]              | [remix-line][]       | [simple-icons][]      | [typicons][]          | [zondicons][]              |
+|                           |                    |                     |                     |                          |
+| ------------------------- | ------------------ | ------------------- | ------------------- | ------------------------ |
+| [bootstrap]               | [boxicons-logos]   | [boxicons-regular]  | [boxicons-solid]    | [crypto]                 |
+| [entypo]                  | [entypo-social]    | [evaicons-outline]  | [evaicons-solid]    | [evil]                   |
+| [fa-brands]               | [fa-regular]       | [fa-solid]          | [feather]           | [fluentui-system-filled] |
+| [fluentui-system-regular] | [foundation]       | [heroicons-outline] | [heroicons-solid]   | [icomoon]                |
+| [ionicons-outline]        | [ionicons-sharp]   | [ionicons-solid]    | [material-outlined] | [material-rounded]       |
+| [material-sharp]          | [material-twotone] | [octicons]          | [open-iconic]       | [remix-editor]           |
+| [remix-fill]              | [remix-line]       | [simple-icons]      | [typicons]          | [zondicons]              |
 
 ## Credit where it's due!
 
