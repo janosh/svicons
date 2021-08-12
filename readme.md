@@ -36,6 +36,14 @@ Then in a Svelte file, import and use as
 | [material-sharp]          | [material-twotone] | [octicons]          | [open-iconic]       | [remix-editor]           |
 | [remix-fill]              | [remix-line]       | [simple-icons]      | [typicons]          | [zondicons]              |
 
+## To Dos
+
+1. Create a searchable & filterable index page listing all icon packs and all available icons. Similar to <https://styled-icons.js.org>. (partially completed)
+2. Convert both the site and all icon packages to TypeScript.
+3. Automate versioning and publishing with GitHub actions to match <https://github.com/svg-icons/svg-icons> release cycles.
+
+Contributions towards any of these goals are much appreciated!
+
 ## Credit where it's due!
 
 Another big thanks to each of these icon packs for providing their icons for public use in the first place!
