@@ -44,7 +44,7 @@ Then in a Svelte file, import and use as
 
 Contributions towards any of these goals are much appreciated!
 
-## Credit where it's due!
+## Credit where it's due
 
 Another big thanks to each of these icon packs for providing their icons for public use in the first place!
 

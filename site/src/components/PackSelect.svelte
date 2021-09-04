@@ -1,0 +1,61 @@
+<script lang="ts">
+  import { titleCase } from '../utils'
+
+  import { filterPacks } from '../stores'
+
+  export let packLengths: [string, number][]
+  // export let filterPacks: string[] = []
+
+  const togglePack = (pack: string) => () => {
+    if ($filterPacks.includes(pack)) $filterPacks = $filterPacks.filter((p) => p !== pack)
+    else $filterPacks = [...$filterPacks, pack]
+  }
+</script>
+
+<ul>
+  {#each packLengths as [pack, count] (pack)}
+    <li>
+      <button class:active={$filterPacks.includes(pack)} on:click={togglePack(pack)}>
+        {titleCase(pack)}
+        <span>{count}</span>
+      </button>
+    </li>
+  {/each}
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    margin: auto;
+    padding: 0 1em 2em;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ex 1em;
+    place-content: center;
+    max-width: 60em;
+    margin: 1em auto 2em;
+    padding: 0 1ex;
+    font-size: calc(0.85em + 0.1vw);
+  }
+  ul button {
+    background: rgba(0, 0, 0, 0.15);
+  }
+  ul button.active {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  ul li button span {
+    background: #0071f0;
+    padding: 0 2pt;
+    margin-left: 1pt;
+    border-radius: 3pt;
+  }
+  ul button {
+    transition: 0.3s;
+  }
+  ul button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1pt 1ex rgba(0, 0, 0, 0.4);
+  }
+</style>

@@ -1,7 +1,9 @@
 # production build
-.svelte
+.svelte-kit
 build
-functions
 
 # deploy config
 .netlify
+
+# auto-generated JSON
+src/*.json
