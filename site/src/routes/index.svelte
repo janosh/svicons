@@ -1,8 +1,9 @@
 <script lang="ts">
   import IconExplorer from '../components/IconExplorer.svelte'
   import PackSelect from '../components/PackSelect.svelte'
-  import iconKeys from '../iconKeys.json'
-  import packLengths from '../packLengths.json'
+  import GitHubCorner from '../components/GitHubCorner.svelte'
+  import iconKeys from '../iconKeys'
+  import packLengths from '../packLengths'
 
   const iconCount = packLengths.reduce(
     (acc: number, pack: [string, number]) => acc + pack[1],
@@ -15,11 +16,13 @@
   )
 </script>
 
+<GitHubCorner href="https://github.com/janosh/svicons" />
+
 <img src="svicons.svg" alt="Svicons" style="height: 6em; margin: 1em;" />
 
 <p>
-  <span>{Object.keys(packLengths).length}</span> Icon Packs totaling
-  <span>{iconCount.toLocaleString()}</span> SVG Icons
+  <strong>{Object.keys(packLengths).length}</strong> Icon Packs totaling
+  <strong>{iconCount.toLocaleString()}</strong> SVG Icons
 </p>
 
 <br />
@@ -27,3 +30,9 @@
 <PackSelect {packLengths} />
 
 <IconExplorer {icons} />
+
+<style>
+  :global(:root) {
+    --ghc-color: var(--green);
+  }
+</style>

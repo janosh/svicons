@@ -6,24 +6,31 @@
   export let icons
 
   let query = ``
+  const nVisible = 100
+  $: nPacks = $filterPacks.length
 
   $: filteredIcons = icons.filter(
     (icon) =>
       icon.includes(query) &&
-      ($filterPacks.length === 0 || $filterPacks.some((pack) => icon.includes(pack)))
+      (nPacks === 0 || $filterPacks.some((pack) => icon.includes(pack)))
   )
-  const nVisible = 100
 </script>
 
-<input name="Search" bind:value={query} placeholder="Search..." />
+<input type="search" bind:value={query} placeholder="Search..." />
 
-{#if query || $filterPacks.length > 0}
-  <p>{filteredIcons.length} matching icons</p>
+{#if query || nPacks > 0}
+  <p>
+    <strong>{filteredIcons.length}</strong> matching icons
+    {#if nPacks > 0}
+      in <strong>{nPacks}</strong> pack{nPacks > 1 ? `s` : ``}
+    {/if}
+  </p>
 {/if}
 
-<ul class="grid">
+<ul>
   {#each filteredIcons.slice(0, nVisible) as key}
     <li>
+      <strong>{pascalCase(key.split(`/`)[1])}</strong>
       {#await import(`./icons/${key}.svelte`) then Component}
         <Component.default width="100" />
       {/await}
@@ -37,25 +44,24 @@
         <CopyButton
           content="import {pascalCase(key.split(`/`)[1])} from '@svicons/{key}.svelte'" />
       </code>
-      <!-- <code>
-        <span class="builtin">npm i</span>
-        <span class="str">-D</span>
-        <span class="symbol">@svicons/{key.split(`/`)[0]}</span>
-      </code> -->
     </li>
   {/each}
 </ul>
 
 <style>
-  ul.grid {
+  ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
     grid-gap: 2em 3ex;
+    padding: 0;
   }
-  ul.grid li {
+  p strong {
+    color: lightsalmon;
+  }
+  ul li {
     place-items: center;
     background: rgba(0, 0, 0, 0.2);
-    padding: 2ex 1ex;
+    padding: 2ex 1ex 1ex;
     border-radius: 1ex;
     display: grid;
     gap: 1em;
@@ -63,7 +69,7 @@
     cursor: pointer;
     word-break: break-word;
   }
-  ul.grid li:hover {
+  ul li:hover {
     transform: translateY(-1px);
     background: rgba(0, 0, 0, 0.25);
   }

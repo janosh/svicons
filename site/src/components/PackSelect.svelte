@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { titleCase } from '../utils'
+  import Clear from '@svicons/material-rounded/clear.svelte'
 
+  import { titleCase } from '../utils'
   import { filterPacks } from '../stores'
 
   export let packLengths: [string, number][]
-  // export let filterPacks: string[] = []
 
   const togglePack = (pack: string) => () => {
     if ($filterPacks.includes(pack)) $filterPacks = $filterPacks.filter((p) => p !== pack)
@@ -21,6 +21,13 @@
       </button>
     </li>
   {/each}
+  {#if $filterPacks.length > 0}
+    <li>
+      <button on:click={() => ($filterPacks = [])}>
+        Clear selection <Clear width="10pt" style="vertical-align: -2pt;" />
+      </button>
+    </li>
+  {/if}
 </ul>
 
 <style>

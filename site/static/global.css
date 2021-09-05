@@ -1,5 +1,9 @@
+:root {
+  --blue: #00794a;
+  --green: #00794a;
+}
 body {
-  background: linear-gradient(0deg, #000077, #00794a);
+  background: linear-gradient(0deg, var(--blue), var(--green));
   min-height: 100vh;
   padding: 2vw;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;

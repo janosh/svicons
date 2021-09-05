@@ -3,7 +3,7 @@
   "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
   "description": "Popular SVG Icon Packs as Svelte components",
   "repository": "https://github.com/janosh/svicons",
-  "homepage": "https://github.com/janosh/svicons#readme",
+  "homepage": "https://svicons.netlify.app",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",

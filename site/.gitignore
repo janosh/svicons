@@ -5,5 +5,6 @@ build
 # deploy config
 .netlify
 
-# auto-generated JSON
-src/*.json
+# generated files
+src/iconKeys.ts
+src/packLengths.ts
