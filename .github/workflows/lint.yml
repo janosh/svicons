@@ -13,6 +13,6 @@ jobs:
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         # docs at https://git.io/JBaKu
         with:
-          config-file: .github/workflows/markdown_link_check_config.json  # sets status code 429 'Too Many Requests' as alive
+          config-file: .github/workflows/markdown_link_check_config.json # sets status code 429 'Too Many Requests' as alive
           max-depth: 0
           file-path: readme.md, scripts/readme-template.md

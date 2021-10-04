@@ -18,11 +18,17 @@ for (const dir of dirs) {
   iconNames[dir] = svgFilenames
 }
 
-fs.writeFileSync(`site/src/iconKeys.ts`, `export default ${JSON.stringify(iconNames)}`)
+fs.writeFileSync(
+  `site/src/iconKeys.ts`,
+  `export default ${JSON.stringify(iconNames)}`
+)
 
 const lengthData = Object.entries(iconNames).map(([pack, keys]) => [
   pack,
   keys.length,
 ])
 
-fs.writeFileSync(`site/src/packLengths.ts`, `export default ${JSON.stringify(lengthData)}`)
+fs.writeFileSync(
+  `site/src/packLengths.ts`,
+  `export default ${JSON.stringify(lengthData)}`
+)

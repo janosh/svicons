@@ -4,7 +4,8 @@
 
 <h2 align="center">
 
-  [Simple Icons][simple-icons] icon pack as dependency-free Svelte components
+[Simple Icons][simple-icons] icon pack as dependency-free Svelte components
+
 </h2>
 
 > Big thanks to [@jacobwgillespie](https://github.com/jacobwgillespie) and his project [`svg-icons`](https://github.com/svg-icons/svg-icons) for providing pre-assembled and pre-cleaned SVG icons!
