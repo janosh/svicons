@@ -11,7 +11,13 @@
 Install any of the icon packs in the table below with
 
 ```sh
-yarn add -D @svicons/<pack-name>  # e.g. yarn add -D @svicons/fa-solid @svicons/material-sharp
+yarn add -D @svicons/<pack-name>
+```
+
+For example
+
+```sh
+yarn add -D @svicons/octicons @svicons/fa-solid @svicons/material-sharp
 ```
 
 Then in a Svelte file, import and use as

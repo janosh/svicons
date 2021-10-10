@@ -65,21 +65,5 @@
     "svelte2tsx": "^0.4.5",
     "typescript": "^4.4.2",
     "vite": "^2.1.5"
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.17.0",
-    "@svg-icons/boxicons-logos": "^1.66.0",
-    "@svg-icons/boxicons-regular": "^1.66.0",
-    "@svg-icons/boxicons-solid": "^1.66.0",
-    "@svg-icons/crypto": "^1.66.0",
-    "@svg-icons/fa-brands": "^1.68.0",
-    "@svg-icons/fluentui-system-filled": "^1.60.0",
-    "@svg-icons/fluentui-system-regular": "^1.60.0",
-    "@svg-icons/heroicons-outline": "^1.64.0",
-    "@svg-icons/heroicons-solid": "^1.64.0",
-    "@svg-icons/octicons": "^1.73.0",
-    "@svg-icons/simple-icons": "^1.72.0",
-    "eslint": "^7.32.0",
-    "prettier": "^2.3.2"
   }
 }

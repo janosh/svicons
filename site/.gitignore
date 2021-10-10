@@ -8,3 +8,5 @@ build
 # generated files
 src/iconKeys.ts
 src/packLengths.ts
+
+src/components/icons
