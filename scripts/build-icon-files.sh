@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn add -D --ignore-workspace-root-check \
+yarn upgrade --latest \
   @svg-icons/bootstrap \
   @svg-icons/boxicons-logos \
   @svg-icons/boxicons-regular \
