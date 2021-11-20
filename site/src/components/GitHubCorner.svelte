@@ -20,15 +20,14 @@
 </a>
 
 <style>
-  svg {
-    fill: var(--ghc-bg, black);
-    color: var(--ghc-color, white);
-    width: var(--ghc-size, 50pt);
-    height: var(--ghc-size, 50pt);
+  a {
     position: fixed;
     top: 0;
-    border: 0;
     right: 0;
+    width: var(--ghc-size, min(50pt, 15vw));
+    fill: var(--ghc-bg, black);
+    color: var(--ghc-color, white);
+    z-index: 1;
   }
   a:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
@@ -45,14 +44,6 @@
     40%,
     80% {
       transform: rotate(10deg);
-    }
-  }
-  @media (max-width: 500px) {
-    a:hover .octo-arm {
-      animation: none;
-    }
-    a .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
     }
   }
 </style>

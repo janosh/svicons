@@ -1,3 +1,6 @@
 # dependencies
 node_modules
 yarn-error.log
+
+# build output
+packages

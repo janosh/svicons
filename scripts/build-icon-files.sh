@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn add -D \
+yarn add -D --ignore-workspace-root-check \
   @svg-icons/bootstrap \
   @svg-icons/boxicons-logos \
   @svg-icons/boxicons-regular \
@@ -39,12 +39,16 @@ yarn add -D \
 
 
 for dir in node_modules/@svg-icons/*; do
-  name=${dir##*/}
-  echo processing $name...
-  mkdir -p "src/icons/$name"
-  cp $dir/*.svg "src/icons/$name"
-  rename -f 's/.svg/.svelte/' src/icons/$name/*
-  sed -i '' 's/<svg \([a-z]\)/<svg {...$$props} \1/' src/icons/$name/*.svelte
+  packname=${dir##*/}
+  echo Building icon files for $packname...
+  mkdir -p "packages/$packname/icons"
+  # move all SVG assets from node modules to the pack's directory
+  cp node_modules/@svg-icons/$packname/*.svg "packages/$packname/icons/"
+  # replace all .svg with .svelte extensions (-f: force overwrite existing files)
+  rename -f 's/\.svg$/.svelte/' packages/$packname/icons/*.svg
+  # insert {...$$props} into each SVG component
+  sed -i '' 's/<svg \([a-z]\)/<svg {...$$props} \1/' packages/$packname/icons/*.svelte
 done
 
-node src/build.js
+node scripts/build-packages.js
+node scripts/build-pack-metadata.js

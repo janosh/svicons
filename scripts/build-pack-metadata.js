@@ -9,11 +9,11 @@ const dirs = fs.readdirSync(`node_modules/@svg-icons`)
 const iconNames = {}
 
 for (const dir of dirs) {
-  console.log(`Processing ${dir}...`)
+  console.log(`Fetching metadata for ${dir}...`)
   const svgFilenames = fs
     .readdirSync(`node_modules/@svg-icons/${dir}`)
     .filter((str) => str.endsWith(`.svg`))
-    .map((str) => str.replace(/.svg$/, ``))
+    .map((str) => str.trimRight(`.svg`))
 
   iconNames[dir] = svgFilenames
 }

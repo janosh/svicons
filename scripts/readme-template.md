@@ -3,18 +3,19 @@
 </p>
 
 <h2 align="center">
-<!-- blank line needed for parsing markdown inside h2 -->
 
-  [{titleCasedPackName}][{packName}] icon pack as dependency-free Svelte components
+<!-- prettier-ignore -->
+[{titleCasedPackName}][{packName}] icon pack as dependency-free Svelte components
+
 </h2>
-
-> Big thanks to [@jacobwgillespie](https://github.com/jacobwgillespie) and his project [`svg-icons`](https://github.com/svg-icons/svg-icons) for providing pre-assembled and pre-cleaned SVG icons!
 
 ## Usage
 
 Install with
 
 ```sh
+npm i -D @svicons/{packName}
+# or
 yarn add -D @svicons/{packName}
 ```
 

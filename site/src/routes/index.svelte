@@ -10,7 +10,7 @@
     0
   )
 
-  const icons = Object.entries(iconKeys).reduce(
+  const iconNames = Object.entries(iconKeys).reduce(
     (acc: string[], [packName, arr]) => acc.concat(arr.map((s) => `${packName}/${s}`)),
     []
   )
@@ -29,7 +29,7 @@
 
 <PackSelect {packLengths} />
 
-<IconExplorer {icons} />
+<IconExplorer {iconNames} packNames={Object.keys(iconKeys)} />
 
 <style>
   :global(:root) {
