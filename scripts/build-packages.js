@@ -32,7 +32,7 @@ for (const packName of dirs) {
 
   const pkg = {
     name: `@svicons/${packName}`,
-    version: `0.1.5`,
+    version: `0.1.6`,
     license: `MIT`,
     module: `./index.js`,
     type: `module`,
@@ -67,9 +67,16 @@ for (const packName of dirs) {
     readme = readme.replaceAll(slot, value)
   }
   fs.writeFileSync(`src/lib/${packName}/readme.md`, readme)
+  fs.copyFileSync(`license`, `src/lib/${packName}/license`)
 
   const pkgStructure = fs.readdirSync(`src/lib/${packName}`)
-  const expectedFiles = [`readme.md`, `package.json`, `index.js`, `icons`]
+  const expectedFiles = [
+    `readme.md`,
+    `package.json`,
+    `index.js`,
+    `icons`,
+    `license`,
+  ]
   if (!pkgStructure.every((file) => expectedFiles.includes(file))) {
     const extraFiles = pkgStructure.filter(
       (file) => !expectedFiles.includes(file)

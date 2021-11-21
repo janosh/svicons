@@ -10,6 +10,10 @@ export default {
     // hydrate the <body> element in src/app.html
     target: `body`,
 
+    package: {
+      dir: `packages`,
+    },
+
     vite: {
       experimental: {
         prebundleSvelteLibraries: true, // https://git.io/JX9nK

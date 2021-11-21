@@ -4,7 +4,17 @@
 
 <h2 align="center">Popular SVG icon packs as dependency-free Svelte components</h2>
 
+<h3 align="center">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0d610e7d-fefe-436a-a871-d6f3e47593a9/deploy-status)](https://app.netlify.com/sites/svicons/deploys)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/janosh/svicons/main.svg)](https://results.pre-commit.ci/latest/github/janosh/svicons/main)
+[![Link check](https://github.com/janosh/svicons/actions/workflows/link-check.yml/badge.svg)](https://github.com/janosh/svicons/actions/workflows/link-check.yml)
+
+</h3>
+
 > Big thanks to [@jacobwgillespie](https://github.com/jacobwgillespie) and his project [`svg-icons`](https://github.com/svg-icons/svg-icons) for providing pre-assembled and pre-cleaned SVG icons!
+
+**[Icon Explorer](https://svicons.netlify.app)** (very much WIP)
 
 ## Usage
 
@@ -45,8 +55,9 @@ Then in a Svelte file, import and use as
 ## To Dos
 
 1. Create a searchable & filterable index page listing all icon packs and all available icons. Similar to <https://styled-icons.dev>. (partially completed)
-2. Convert both the site and all icon packages to TypeScript.
+2. Convert both the site and all icon packages to TypeScript. (partially completed)
 3. Automate versioning and publishing with GitHub actions to match <https://github.com/svg-icons/svg-icons> release cycles.
+4. Add some `ava` tests to ensure icons can be imported and have expected props.
 
 Contributions towards any of these goals are much appreciated!
 
@@ -57,7 +68,7 @@ Thanks to all these icon packs for their permissive licensing, allowing free use
 - [Bootstrap](https://icons.getbootstrap.com): [MIT License](https://github.com/twbs/icons/blob/main/LICENSE.md)
 - [Boxicons](https://boxicons.com): [CC BY 4.0 License](https://boxicons.com/usage#license)
 - [Crypto Icons](http://cryptoicons.co): [CC0 1.0 Universal License](https://github.com/atomiclabs)
-- [Entypo](http://entypo.com): [CC BY-SA 4.0 License](http://www.entypo.com/)
+- [Entypo](http://entypo.com): [CC BY-SA 4.0 License](http://entypo.com)
 - [Eva Icons](https://akveo.github.io/eva-icons): [MIT License](https://github.com/akveo/eva-icons/blob/master/LICENSE.txt)
 - [Evil Icons](https://evil-icons.io): [MIT License](https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt)
 - [Feather](https://feathericons.com): [MIT License](https://github.com/feathericons/feather/blob/master/LICENSE)

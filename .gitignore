@@ -4,7 +4,7 @@ yarn-error.log
 
 # package build
 src/lib
-package
+packages
 
 # demo site build
 .svelte-kit

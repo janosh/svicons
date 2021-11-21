@@ -1,4 +1,4 @@
-name: Linter
+name: Link check
 
 on: [push, pull_request]
 
