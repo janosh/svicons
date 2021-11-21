@@ -4,7 +4,7 @@
 import fs from 'fs'
 
 const dirs = fs
-  .readdirSync(`packages`, { withFileTypes: true })
+  .readdirSync(`src/lib`, { withFileTypes: true })
   .filter((dirent) => dirent.isDirectory())
   .map((dirent) => dirent.name)
 
@@ -13,23 +13,22 @@ const upperFirst = (str) =>
 const titleCase = (str) => str.split(`-`).map(upperFirst).join(` `)
 const pascalCase = (str) => str.split(`-`).map(upperFirst).join(``)
 
+const exportIcon = (name) =>
+  `export { default as ${pascalCase(name)} } from './icons/${name}.svelte'`
+
 for (const packName of dirs) {
   console.log(`Creating package ${packName}...`)
 
-  const iconFiles = fs.readdirSync(`packages/${packName}/icons`)
+  const iconFiles = fs.readdirSync(`src/lib/${packName}/icons`)
 
   const iconNames = iconFiles
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard files starting with digits
     .map((str) => str.split(`.`)[0]) // keep only the filename without extension
 
-  const indexJsExports = iconNames
-    .map(
-      (icon) =>
-        `export { default as ${pascalCase(icon)} } from './${icon}.svelte'`
-    )
-    .join(`\n`)
-
-  fs.writeFileSync(`packages/${packName}/index.js`, indexJsExports)
+  fs.writeFileSync(
+    `src/lib/${packName}/index.js`,
+    iconNames.map(exportIcon).join(`\n`)
+  )
 
   const pkg = {
     name: `@svicons/${packName}`,
@@ -53,7 +52,7 @@ for (const packName of dirs) {
     },
   }
   fs.writeFileSync(
-    `packages/${packName}/package.json`,
+    `src/lib/${packName}/package.json`,
     JSON.stringify(pkg, null, 2) + `\n`
   )
 
@@ -67,18 +66,18 @@ for (const packName of dirs) {
   ]) {
     readme = readme.replaceAll(slot, value)
   }
-  fs.writeFileSync(`packages/${packName}/readme.md`, readme)
+  fs.writeFileSync(`src/lib/${packName}/readme.md`, readme)
 
-  const pkgStructure = fs.readdirSync(`packages/${packName}`)
+  const pkgStructure = fs.readdirSync(`src/lib/${packName}`)
   const expectedFiles = [`readme.md`, `package.json`, `index.js`, `icons`]
   if (!pkgStructure.every((file) => expectedFiles.includes(file))) {
     const extraFiles = pkgStructure.filter(
       (file) => !expectedFiles.includes(file)
     )
     throw new Error(
-      `Unexpected files in package '${packName}': [${extraFiles}]`
+      `Unexpected files in 'src/lib/${packName}': [${extraFiles}]`
     )
   }
 }
 
-console.log(`Finished building all ${dirs.length} packages!`)
+console.log(`Finished building all ${dirs.length} packages!\n`)

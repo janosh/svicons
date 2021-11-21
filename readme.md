@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="site/static/svicons.svg" alt="Svicons" height=125>
+  <img src="static/svicons.svg" alt="Svicons" height=125>
 </p>
 
 <h2 align="center">Popular SVG icon packs as dependency-free Svelte components</h2>

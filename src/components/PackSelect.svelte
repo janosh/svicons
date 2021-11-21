@@ -1,8 +1,7 @@
 <script lang="ts">
-  import Clear from '@svicons/material-rounded/clear.svelte'
-
-  import { titleCase } from '../utils'
+  import { Clear } from '../lib/material-rounded'
   import { filterPacks } from '../stores'
+  import { titleCase } from '../utils'
 
   export let packLengths: [string, number][]
 

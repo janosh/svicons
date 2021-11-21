@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/janosh/svicons/main/site/static/svicons.svg" alt="Svicons" height=125>
+  <img src="https://raw.githubusercontent.com/janosh/svicons/main/static/svicons.svg" alt="Svicons" height=125>
 </p>
 
 <h2 align="center">

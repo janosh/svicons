@@ -1,7 +1,7 @@
 <script lang="ts">
+  import GitHubCorner from '../components/GitHubCorner.svelte'
   import IconExplorer from '../components/IconExplorer.svelte'
   import PackSelect from '../components/PackSelect.svelte'
-  import GitHubCorner from '../components/GitHubCorner.svelte'
   import iconKeys from '../iconKeys'
   import packLengths from '../packLengths'
 
@@ -29,7 +29,7 @@
 
 <PackSelect {packLengths} />
 
-<IconExplorer {iconNames} packNames={Object.keys(iconKeys)} />
+<IconExplorer {iconNames} />
 
 <style>
   :global(:root) {

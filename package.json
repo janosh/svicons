@@ -8,20 +8,19 @@
   "license": "MIT",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "site"
-  ],
   "scripts": {
+    "build": "svelte-kit build",
+    "dev": "svelte-kit dev",
+    "preview": "svelte-kit preview",
+    "serve": "yarn build && yarn preview",
+    "check": "svelte-check",
+    "package": "svelte-kit package",
     "release": "node scripts/build-packages.js && yarn changeset publish"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
-    "prettier": "^2.2.1",
-    "svelte": "^3.42.4"
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.16.0",
+    "@changesets/cli": "^2.18.0",
+    "@sveltejs/adapter-static": "^1.0.0-next.21",
+    "@sveltejs/kit": "^1.0.0-next.196",
     "@svg-icons/bootstrap": "^1.83.0",
     "@svg-icons/boxicons-logos": "^1.39.1",
     "@svg-icons/boxicons-regular": "^1.39.1",
@@ -56,6 +55,18 @@
     "@svg-icons/remix-line": "^1.39.1",
     "@svg-icons/simple-icons": "^1.85.0",
     "@svg-icons/typicons": "^1.39.1",
-    "@svg-icons/zondicons": "^1.39.1"
+    "@svg-icons/zondicons": "^1.39.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.2",
+    "svelte-check": "^2.2.10",
+    "svelte-preprocess": "^4.9.8",
+    "svelte2tsx": "^0.4.10",
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14"
   }
 }

@@ -1,15 +1,15 @@
 <script>
-  import CopyButton from './CopyButton.svelte'
-  import { pascalCase } from '../utils'
   import { filterPacks } from '../stores'
+  import { pascalCase } from '../utils'
+  import CopyButton from './CopyButton.svelte'
 
-  export let icons
+  export let iconNames
 
   let query = ``
   const nVisible = 100
   $: nPacks = $filterPacks.length
 
-  $: filteredIcons = icons.filter(
+  $: filteredIcons = iconNames.filter(
     (icon) =>
       icon.includes(query) &&
       (nPacks === 0 || $filterPacks.some((pack) => icon.includes(pack)))
@@ -42,7 +42,8 @@
           <span class="str">'@svicons/{key}.svelte'</span>
         </div>
         <CopyButton
-          content="import {pascalCase(key.split(`/`)[1])} from '@svicons/{key}.svelte'" />
+          content="import {pascalCase(key.split(`/`)[1])} from '@svicons/{key}.svelte'"
+        />
       </code>
     </li>
   {/each}

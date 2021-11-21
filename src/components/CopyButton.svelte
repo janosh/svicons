@@ -1,6 +1,6 @@
 <script lang="ts">
-  import CopyIcon from '@svicons/fa-regular/copy.svelte'
-  import Check from '@svicons/octicons/check.svelte'
+  import { Copy as CopyIcon } from '../lib/fa-regular'
+  import { Check } from '../lib/octicons'
 
   export let content: string
   export let duration = 1000

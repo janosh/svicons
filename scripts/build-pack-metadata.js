@@ -19,7 +19,7 @@ for (const dir of dirs) {
 }
 
 fs.writeFileSync(
-  `site/src/iconKeys.ts`,
+  `src/iconKeys.ts`,
   `export default ${JSON.stringify(iconNames)}`
 )
 
@@ -29,6 +29,6 @@ const lengthData = Object.entries(iconNames).map(([pack, keys]) => [
 ])
 
 fs.writeFileSync(
-  `site/src/packLengths.ts`,
+  `src/packLengths.ts`,
   `export default ${JSON.stringify(lengthData)} as [string, number][]`
 )
