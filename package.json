@@ -7,7 +7,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
-  "private": true,
   "scripts": {
     "prebuild": "node scripts/build-pack-metadata.js",
     "build": "svelte-kit build",
@@ -15,7 +14,7 @@
     "preview": "svelte-kit preview",
     "serve": "yarn build && yarn preview",
     "check": "svelte-check",
-    "package": "node scripts/build-packages.js && svelte-kit package"
+    "package": "node scripts/build-packages.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.21",

@@ -25,14 +25,13 @@ for (const packName of dirs) {
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard files starting with digits
     .map((str) => str.split(`.`)[0]) // keep only the filename without extension
 
-  fs.writeFileSync(
-    `src/lib/${packName}/index.js`,
-    iconNames.map(exportIcon).join(`\n`)
-  )
+  const indexExports = iconNames.map(exportIcon).join(`\n`)
+  fs.writeFileSync(`src/lib/${packName}/index.js`, indexExports)
+  fs.writeFileSync(`src/lib/${packName}/index.d.ts`, indexExports)
 
   const pkg = {
     name: `@svicons/${packName}`,
-    version: `0.1.6`,
+    version: `0.1.7`,
     license: `MIT`,
     module: `./index.js`,
     type: `module`,
@@ -56,7 +55,15 @@ for (const packName of dirs) {
     JSON.stringify(pkg, null, 2) + `\n`
   )
 
-  let readme = fs.readFileSync(`scripts/readme-template.md`, `utf8`)
+  const iconDts = fs.readFileSync(`scripts/template-icon.d.ts`, `utf8`)
+  for (const iconName of iconNames) {
+    fs.writeFileSync(
+      `src/lib/${packName}/icons/${iconName}.d.ts`,
+      iconDts.replaceAll(`__IconName__`, pascalCase(iconName))
+    )
+  }
+
+  let readme = fs.readFileSync(`scripts/template-readme.md`, `utf8`)
   for (const [slot, value] of [
     [`{packName}`, packName],
     [`{titleCasedPackName}`, titleCase(packName)],
@@ -74,6 +81,7 @@ for (const packName of dirs) {
     `readme.md`,
     `package.json`,
     `index.js`,
+    `index.d.ts`,
     `icons`,
     `license`,
   ]
