@@ -1,5 +1,5 @@
 <script lang="ts">
-  import GitHubCorner from '../components/GitHubCorner.svelte'
+  import GitHubCorner from 'svelte-github-corner'
   import IconExplorer from '../components/IconExplorer.svelte'
   import PackSelect from '../components/PackSelect.svelte'
   import iconKeys from '../iconKeys'
