@@ -5,13 +5,11 @@
 <h2 align="center">
 
 <!-- prettier-ignore -->
-[{titleCasedPackName}][{packName}] icon pack as dependency-free Svelte components
+[{titleCasedPackName}][{packName}] icon pack as Svelte components
 
 </h2>
 
-## Usage
-
-Install with
+## Installation
 
 ```sh
 npm i -D @svicons/{packName}
@@ -19,7 +17,7 @@ npm i -D @svicons/{packName}
 yarn add -D @svicons/{packName}
 ```
 
-Then in a Svelte file, import and use as
+## Usage
 
 ```svelte
 <script>
@@ -29,7 +27,7 @@ Then in a Svelte file, import and use as
 <{componentName} width="3em" color="green" />
 ```
 
-## All Available Icon Packs
+## Other Svicon Packs
 
 |                           |                    |                     |                     |                          |
 | ------------------------- | ------------------ | ------------------- | ------------------- | ------------------------ |

@@ -16,7 +16,7 @@
   )
 </script>
 
-<GitHubCorner href="https://github.com/janosh/svicons" />
+<GitHubCorner href="https://github.com/janosh/svicons" --ghc-color="var(--green)" />
 
 <img src="svicons.svg" alt="Svicons" style="height: 6em; margin: 1em;" />
 
@@ -30,9 +30,3 @@
 <PackSelect {packLengths} />
 
 <IconExplorer {iconNames} />
-
-<style>
-  :global(:root) {
-    --ghc-color: var(--green);
-  }
-</style>
