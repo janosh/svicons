@@ -31,7 +31,7 @@ for (const packName of dirs) {
 
   const pkg = {
     name: `@svicons/${packName}`,
-    version: `0.1.7`,
+    version: `0.1.8`,
     license: `MIT`,
     type: `module`,
     main: `./index.js`,
