@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 yarn upgrade --latest \
   @svg-icons/bootstrap \

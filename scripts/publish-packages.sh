@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # trailing slash to only match directories
 for dir in src/lib/*/; do
   echo "Publishing $dir"
