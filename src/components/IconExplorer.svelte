@@ -28,21 +28,22 @@
 {/if}
 
 <ul>
-  {#each filteredIcons.slice(0, nVisible) as key}
+  {#each filteredIcons.slice(0, nVisible) as iconPath}
+    {@const [packName, iconName] = iconPath.split(`/`)}
     <li>
-      <strong>{pascalCase(key.split(`/`)[1])}</strong>
-      {#await import(`./icons/${key}.svelte`) then Component}
+      <strong>{pascalCase(iconName)}</strong>
+      {#await import(`../lib/${packName}/icons/${iconName}.svelte`) then Component}
         <Component.default width="100" />
       {/await}
       <code>
         <div>
           <span class="builtin">import</span>
-          <span class="symbol">{pascalCase(key.split(`/`)[1])}</span>
+          <span class="symbol">{pascalCase(iconName)}</span>
           <span class="builtin">from</span>
-          <span class="str">'@svicons/{key}.svelte'</span>
+          <span class="str">'@svicons/{iconPath}.svelte'</span>
         </div>
         <CopyButton
-          content="import {pascalCase(key.split(`/`)[1])} from '@svicons/{key}.svelte'"
+          content="import {pascalCase(iconName)} from '@svicons/{iconPath}.svelte'"
         />
       </code>
     </li>

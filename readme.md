@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="static/svicons.svg" alt="Svicons" height=125>
+  <img src="static/svicons.svg" alt="Svicons" height=100>
 </p>
 
-<h2 align="center">Popular SVG icon packs as dependency-free Svelte components</h2>
+<h2 align="center">Popular SVG icon packs as Svelte components</h2>
 
 <h3 align="center">
 
@@ -16,12 +16,12 @@
 
 **[Icon Explorer](https://svicons.netlify.app)** (very much WIP)
 
-## Usage
-
-Install any of the icon packs in the table below with
+## Installation
 
 ```sh
-yarn add -D @svicons/<pack-name>
+npm i -D @svicons/{packName}
+# or
+yarn add -D @svicons/{packName}
 ```
 
 For example
@@ -30,7 +30,7 @@ For example
 yarn add -D @svicons/octicons @svicons/fa-solid @svicons/material-sharp
 ```
 
-Then in a Svelte file, import and use as
+## Usage
 
 ```svelte
 <script>
@@ -40,7 +40,7 @@ Then in a Svelte file, import and use as
 <Alarm width="3em" color="green" />
 ```
 
-## Available Icon Packs
+## Other Svicon Packs
 
 |                           |                    |                     |                     |                          |
 | ------------------------- | ------------------ | ------------------- | ------------------- | ------------------------ |

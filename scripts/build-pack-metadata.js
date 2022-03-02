@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /* eslint-disable no-console */
 
 import fs from 'fs'
@@ -13,7 +11,7 @@ for (const dir of dirs) {
   const svgFilenames = fs
     .readdirSync(`node_modules/@svg-icons/${dir}`)
     .filter((str) => str.endsWith(`.svg`))
-    .map((str) => str.trimRight(`.svg`))
+    .map((str) => str.slice(0, -4)) // remove .svg
 
   iconNames[dir] = svgFilenames
 }
