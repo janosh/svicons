@@ -7,6 +7,8 @@ export default {
   kit: {
     adapter: adapter(),
 
+    prerender: { default: true },
+
     vite: {
       experimental: {
         prebundleSvelteLibraries: true, // https://git.io/JX9nK

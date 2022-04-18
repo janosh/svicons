@@ -30,7 +30,7 @@ for (const packName of dirs) {
 
   const pkg = {
     name: `@svicons/${packName}`,
-    version: `0.1.8`,
+    version: `0.1.9`,
     license: `MIT`,
     type: `module`,
     main: `./index.js`,
@@ -55,10 +55,10 @@ for (const packName of dirs) {
     JSON.stringify(pkg, null, 2) + `\n`
   )
 
-  const iconDts = fs.readFileSync(`scripts/template-icon.d.ts`, `utf8`)
+  const iconDts = fs.readFileSync(`scripts/template-icon.svelte.d.ts`, `utf8`)
   for (const iconName of iconNames) {
     fs.writeFileSync(
-      `src/lib/${packName}/icons/${iconName}.d.ts`,
+      `src/lib/${packName}/icons/${iconName}.svelte.d.ts`,
       iconDts.replaceAll(`__IconName__`, pascalCase(iconName))
     )
   }
