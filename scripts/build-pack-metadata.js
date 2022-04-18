@@ -1,5 +1,8 @@
 /* eslint-disable no-console */
 
+// Create name lists and icon counts for each icon pack to be used by the explorer site.
+// Call with `node scripts/build-packages.js`.
+
 import fs from 'fs'
 
 const dirs = fs.readdirSync(`node_modules/@svg-icons`)

@@ -1,5 +1,8 @@
 /* eslint-disable no-console */
 
+// Create package.json, index.js, type declarations files for each icon pack.
+// Call with `node scripts/build-packages.js`.
+
 import fs from 'fs'
 
 const dirs = fs
@@ -13,12 +16,18 @@ const titleCase = (str) => str.split(`-`).map(upperFirst).join(` `)
 const pascalCase = (str) => str.split(`-`).map(upperFirst).join(``)
 
 const exportIcon = (name) =>
-  `export { default as ${pascalCase(name)} } from './icons/${name}.svelte'`
+  `export { default as ${pascalCase(name)} } from './${name}.svelte'`
 
 for (const packName of dirs) {
   console.log(`Creating package ${packName}...`)
 
-  const iconFiles = fs.readdirSync(`src/lib/${packName}/icons`)
+  const iconFiles = fs
+    .readdirSync(`src/lib/${packName}/`)
+    .filter((file) => file.endsWith(`.svelte`))
+
+  if (iconFiles[0].includes(`/`)) {
+    throw `${iconFiles[0]} should be file-name only and not contain slashes`
+  }
 
   const iconNames = iconFiles
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard files starting with digits
@@ -30,7 +39,7 @@ for (const packName of dirs) {
 
   const pkg = {
     name: `@svicons/${packName}`,
-    version: `0.1.9`,
+    version: `0.1.11`,
     license: `MIT`,
     type: `module`,
     main: `./index.js`,
@@ -46,7 +55,7 @@ for (const packName of dirs) {
     exports: {
       '.': `./index.js`,
       ...Object.fromEntries(
-        iconFiles.map((filename) => [`./${filename}`, `./icons/${filename}`])
+        iconFiles.map((filename) => [`./${filename}`, `./${filename}`])
       ),
     },
   }
@@ -56,9 +65,10 @@ for (const packName of dirs) {
   )
 
   const iconDts = fs.readFileSync(`scripts/template-icon.svelte.d.ts`, `utf8`)
+  // create type declaration files for each icon
   for (const iconName of iconNames) {
     fs.writeFileSync(
-      `src/lib/${packName}/icons/${iconName}.svelte.d.ts`,
+      `src/lib/${packName}/${iconName}.svelte.d.ts`,
       iconDts.replaceAll(`__IconName__`, pascalCase(iconName))
     )
   }
@@ -82,16 +92,13 @@ for (const packName of dirs) {
     `package.json`,
     `index.js`,
     `index.d.ts`,
-    `icons`,
     `license`,
   ]
-  if (!pkgStructure.every((file) => expectedFiles.includes(file))) {
-    const extraFiles = pkgStructure.filter(
-      (file) => !expectedFiles.includes(file)
-    )
-    throw new Error(
-      `Unexpected files in 'src/lib/${packName}': [${extraFiles}]`
-    )
+  const missingFiles = expectedFiles.filter(
+    (file) => !pkgStructure.includes(file)
+  )
+  if (missingFiles.length > 0) {
+    throw new Error(`Missing files in 'src/lib/${packName}': [${missingFiles}]`)
   }
 }
 

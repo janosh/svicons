@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Create Svelte icon files from SVG files in node_modules/@svg-icons/*.
+# Afterwards calls build-packages.js and build-pack-metadata.js.
+
 yarn upgrade --latest \
   @svg-icons/bootstrap \
   @svg-icons/boxicons-logos \
@@ -43,11 +46,11 @@ for dir in node_modules/@svg-icons/*; do
   echo Building icon files for "$packname"...
   mkdir -p "src/lib/$packname/icons"
   # move all SVG assets from node modules to the pack's directory
-  cp node_modules/@svg-icons/"$packname"/*.svg "src/lib/$packname/icons/"
+  cp node_modules/@svg-icons/"$packname"/*.svg "src/lib/$packname/"
   # replace all .svg with .svelte extensions (-f: force overwrite existing files)
-  rename -f 's/\.svg$/.svelte/' src/lib/"$packname"/icons/*.svg
+  rename -f 's/\.svg$/.svelte/' src/lib/"$packname"/*.svg
   # insert {...$$props} into each SVG component
-  sed -i '' 's/<svg \([a-z]\)/<svg {...$$props} \1/' src/lib/"$packname"/icons/*.svelte
+  sed -i '' 's/<svg \([a-z]\)/<svg {...$$props} \1/' src/lib/"$packname"/*.svelte
 done
 
 node scripts/build-packages.js
