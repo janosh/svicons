@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Clear } from '../lib/material-rounded'
+  import { Clear } from '$lib/material-rounded'
   import { filterPacks } from '../stores'
   import { titleCase } from '../utils'
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Copy as CopyIcon } from '../lib/fa-regular'
-  import { Check } from '../lib/octicons'
+  import { Copy as CopyIcon } from '$lib/fa-regular'
+  import { Check } from '$lib/octicons'
 
   export let content: string
   export let duration = 1000
