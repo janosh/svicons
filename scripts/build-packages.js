@@ -10,44 +10,48 @@ const dirs = fs
   .filter((dirent) => dirent.isDirectory())
   .map((dirent) => dirent.name)
 
-const upperFirst = (str) =>
+const upper_first = (str) =>
   str.charAt(0).toUpperCase() + str.substring(1).toLowerCase()
-const titleCase = (str) => str.split(`-`).map(upperFirst).join(` `)
-const pascalCase = (str) => str.split(`-`).map(upperFirst).join(``)
+const title_case = (str) => str.split(`-`).map(upper_first).join(` `)
+const pascal_case = (str) => str.split(`-`).map(upper_first).join(``)
 
-const exportIcon = (name) =>
-  `export { default as ${pascalCase(name)} } from './${name}.svelte'`
+for (const pack_name of dirs) {
+  console.log(`Creating package ${pack_name}...`)
 
-for (const packName of dirs) {
-  console.log(`Creating package ${packName}...`)
-
-  const iconFiles = fs
-    .readdirSync(`src/lib/${packName}/`)
+  const icon_files = fs
+    .readdirSync(`src/lib/${pack_name}/`)
     .filter((file) => file.endsWith(`.svelte`))
 
-  if (iconFiles[0].includes(`/`)) {
-    throw `${iconFiles[0]} should be file-name only and not contain slashes`
+  if (icon_files[0].includes(`/`)) {
+    throw `${icon_files[0]} should be file-name only and not contain slashes`
   }
 
-  const iconNames = iconFiles
+  const icon_names = icon_files
     .filter((str) => str.endsWith(`.svelte`) && !str.match(/^\d/)) // discard files starting with digits
     .map((str) => str.split(`.`)[0]) // keep only the filename without extension
 
-  const indexExports = iconNames.map(exportIcon).join(`\n`)
-  fs.writeFileSync(`src/lib/${packName}/index.js`, indexExports)
-  fs.writeFileSync(`src/lib/${packName}/index.d.ts`, indexExports)
+  const index_exports = icon_names
+    .map(
+      (name) =>
+        `export { default as ${pascal_case(name)} } from './${name}.svelte'`
+    )
+    .join(`\n`)
+  fs.writeFileSync(`src/lib/${pack_name}/index.js`, index_exports)
+  fs.writeFileSync(`src/lib/${pack_name}/index.d.ts`, index_exports)
 
   const pkg = {
-    name: `@svicons/${packName}`,
+    name: `@svicons/${pack_name}`,
     version: `0.1.11`,
     license: `MIT`,
     type: `module`,
     main: `./index.js`,
     svelte: `./index.js`,
-    keywords: [`svicons`, `svg`, `icons`, `svelte`, packName],
+    keywords: [`svicons`, `svg`, `icons`, `svelte`, pack_name],
     author: `Janosh Riebesell <janosh.riebesell@gmail.com>`,
-    description: `${titleCase(packName)} icons available as Svelte components`,
-    homepage: `https://npmjs.com/package/@svicons/${packName}`,
+    description: `${title_case(
+      pack_name
+    )} icons available as Svelte components`,
+    homepage: `https://npmjs.com/package/@svicons/${pack_name}`,
     repository: `https://github.com/janosh/svicons`,
     publishConfig: {
       access: `public`,
@@ -55,50 +59,52 @@ for (const packName of dirs) {
     exports: {
       '.': `./index.js`,
       ...Object.fromEntries(
-        iconFiles.map((filename) => [`./${filename}`, `./${filename}`])
+        icon_files.map((filename) => [`./${filename}`, `./${filename}`])
       ),
     },
   }
   fs.writeFileSync(
-    `src/lib/${packName}/package.json`,
+    `src/lib/${pack_name}/package.json`,
     JSON.stringify(pkg, null, 2) + `\n`
   )
 
-  const iconDts = fs.readFileSync(`scripts/template-icon.svelte.d.ts`, `utf8`)
+  const icon_dts = fs.readFileSync(`scripts/template-icon.svelte.d.ts`, `utf8`)
   // create type declaration files for each icon
-  for (const iconName of iconNames) {
+  for (const icon_name of icon_names) {
     fs.writeFileSync(
-      `src/lib/${packName}/${iconName}.svelte.d.ts`,
-      iconDts.replaceAll(`__IconName__`, pascalCase(iconName))
+      `src/lib/${pack_name}/${icon_name}.svelte.d.ts`,
+      icon_dts.replaceAll(`__IconName__`, pascal_case(icon_name))
     )
   }
 
   let readme = fs.readFileSync(`scripts/template-readme.md`, `utf8`)
   for (const [slot, value] of [
-    [`{packName}`, packName],
-    [`{titleCasedPackName}`, titleCase(packName)],
-    [`{fileName}`, iconNames[0]],
-    [`{componentName}`, pascalCase(iconNames[0])],
-    [/<!-- .+ -->\n/g, ``], // remove HTML comments
+    [`{pack_name}`, pack_name],
+    [`{title_cased_pack_name}`, title_case(pack_name)],
+    [`{file_name}`, icon_names[0]],
+    [`{component_name}`, pascal_case(icon_names[0])],
+    [/\s+<!-- .+ -->\n/g, ``], // remove HTML comments
   ]) {
     readme = readme.replaceAll(slot, value)
   }
-  fs.writeFileSync(`src/lib/${packName}/readme.md`, readme)
-  fs.copyFileSync(`license`, `src/lib/${packName}/license`)
+  fs.writeFileSync(`src/lib/${pack_name}/readme.md`, readme)
+  fs.copyFileSync(`license`, `src/lib/${pack_name}/license`)
 
-  const pkgStructure = fs.readdirSync(`src/lib/${packName}`)
-  const expectedFiles = [
+  const pkg_files = fs.readdirSync(`src/lib/${pack_name}`)
+  const expected_files = [
     `readme.md`,
     `package.json`,
     `index.js`,
     `index.d.ts`,
     `license`,
   ]
-  const missingFiles = expectedFiles.filter(
-    (file) => !pkgStructure.includes(file)
+  const missing_files = expected_files.filter(
+    (file) => !pkg_files.includes(file)
   )
-  if (missingFiles.length > 0) {
-    throw new Error(`Missing files in 'src/lib/${packName}': [${missingFiles}]`)
+  if (missing_files.length > 0) {
+    throw new Error(
+      `Missing files in 'src/lib/${pack_name}': [${missing_files}]`
+    )
   }
 }
 

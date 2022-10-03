@@ -109,7 +109,6 @@ Thanks to all these icon packs for their permissive licensing, allowing free use
 [ionicons-sharp]: https://npmjs.com/package/@svicons/ionicons-sharp
 [ionicons-solid]: https://npmjs.com/package/@svicons/ionicons-solid
 [ionicons-outline]: https://npmjs.com/package/@svicons/ionicons-outline
-[material]: https://npmjs.com/package/@svicons/material
 [material-outlined]: https://npmjs.com/package/@svicons/material-outlined
 [material-rounded]: https://npmjs.com/package/@svicons/material-rounded
 [material-twotone]: https://npmjs.com/package/@svicons/material-twotone

@@ -4,27 +4,26 @@
 
 <h2 align="center">
 
-<!-- prettier-ignore -->
-[{titleCasedPackName}][{packName}] icon pack as Svelte components
+[{title_cased_pack_name}][{pack_name}] icon pack as Svelte components <!-- markdownlint-disable-line MD052 -->
 
 </h2>
 
 ## Installation
 
 ```sh
-npm i -D @svicons/{packName}
+npm i -D @svicons/{pack_name}
 # or
-yarn add -D @svicons/{packName}
+yarn add -D @svicons/{pack_name}
 ```
 
 ## Usage
 
 ```svelte
 <script>
-  import {componentName} from '@svicons/{packName}/{fileName}.svelte
+  import {component_name} from '@svicons/{pack_name}/{file_name}.svelte
 </script>
 
-<{componentName} width="3em" color="green" />
+<{component_name} width="3em" color="green" />
 ```
 
 ## Other Svicon Packs
@@ -62,7 +61,6 @@ yarn add -D @svicons/{packName}
 [ionicons-sharp]: https://npmjs.com/package/@svicons/ionicons-sharp
 [ionicons-solid]: https://npmjs.com/package/@svicons/ionicons-solid
 [ionicons-outline]: https://npmjs.com/package/@svicons/ionicons-outline
-[material]: https://npmjs.com/package/@svicons/material
 [material-outlined]: https://npmjs.com/package/@svicons/material-outlined
 [material-rounded]: https://npmjs.com/package/@svicons/material-rounded
 [material-twotone]: https://npmjs.com/package/@svicons/material-twotone
