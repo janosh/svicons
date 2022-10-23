@@ -1,6 +1,5 @@
 # dependencies
 node_modules
-yarn-error.log
 
 # package build
 src/lib
@@ -15,5 +14,5 @@ build
 .netlify
 
 # generated files
-src/iconKeys.ts
-src/packLengths.ts
+src/icon-keys.ts
+src/pack-lengths.ts

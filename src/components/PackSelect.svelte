@@ -3,7 +3,7 @@
   import { filterPacks } from '../stores'
   import { titleCase } from '../utils'
 
-  export let packLengths: [string, number][]
+  export let pack_lengths: [string, number][]
 
   const togglePack = (pack: string) => () => {
     if ($filterPacks.includes(pack)) $filterPacks = $filterPacks.filter((p) => p !== pack)
@@ -12,7 +12,7 @@
 </script>
 
 <ul>
-  {#each packLengths as [pack, count] (pack)}
+  {#each pack_lengths as [pack, count] (pack)}
     <li>
       <button class:active={$filterPacks.includes(pack)} on:click={togglePack(pack)}>
         {titleCase(pack)}

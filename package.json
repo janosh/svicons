@@ -8,11 +8,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/build-pack-metadata.js",
-    "build": "vite build",
+    "build": "node scripts/build-pack-metadata.js && vite build",
     "dev": "vite dev",
     "preview": "vite preview",
-    "serve": "yarn build && yarn preview",
+    "serve": "pnpm build && pnpm preview",
     "check": "svelte-check",
     "package": "node scripts/build-packages.js"
   },
@@ -56,6 +55,7 @@
     "@svg-icons/zondicons": "^1.86.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "devalue": "^4.0.1",
     "eslint": "^8.23.1",
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.7.1",

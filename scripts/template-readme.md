@@ -12,8 +12,6 @@
 
 ```sh
 npm i -D @svicons/{pack_name}
-# or
-yarn add -D @svicons/{pack_name}
 ```
 
 ## Usage

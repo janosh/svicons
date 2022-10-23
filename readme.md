@@ -20,14 +20,12 @@
 
 ```sh
 npm i -D @svicons/{packName}
-# or
-yarn add -D @svicons/{packName}
 ```
 
 For example
 
 ```sh
-yarn add -D @svicons/octicons @svicons/fa-solid @svicons/material-sharp
+pnpm add -D @svicons/octicons @svicons/fa-solid @svicons/material-sharp
 ```
 
 ## Usage

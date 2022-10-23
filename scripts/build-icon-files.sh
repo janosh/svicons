@@ -3,7 +3,7 @@
 # Create Svelte icon files from SVG files in node_modules/@svg-icons/*.
 # Afterwards calls build-packages.js and build-pack-metadata.js.
 
-yarn upgrade --latest \
+pnpm upgrade --latest \
   @svg-icons/bootstrap \
   @svg-icons/boxicons-logos \
   @svg-icons/boxicons-regular \
